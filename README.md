@@ -1,3 +1,3 @@
 # Codigos-LE
 Codigos desarrollados en la materia de Lenguajes Elctronicos. 
-Link del portfolio:
+Profesores: Israel Pavelek y Antonella De Cía
