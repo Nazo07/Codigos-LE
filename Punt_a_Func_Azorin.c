@@ -4,14 +4,13 @@ void NavegarOeste (int *, int *);
 void NavegarEste (int *, int *);
 void NavegarNorte (int *, int *);
 void NavegarSur (int *, int *);
-void Interfaz (void *(int *, int *));
+void Interfaz (void *(int *, int *)); // es diferente porque recibe un puntero a función como parametro
 
-int
-main (void)
+int main (void)
 {
   int x = 0, y = 0;
 
-  void (*func_actual) (int *, int *);	//Declaro el puntero a una funciC3n que recibe 2 parC!metros del tipo puntero a int
+  void (*func_actual) (int *, int *) = NULL;	//Declaro el puntero a una funciC3n que recibe 2 parC!metros del tipo puntero a int
 
   int control = 1;
   while (control)
@@ -31,36 +30,31 @@ main (void)
   return 0;
 }
 
-void
-NavegarOeste (int *x, int *y)
+void NavegarOeste (int *x, int *y)
 {
   (*x)--;
   printf ("\nSe ha movido al Oeste\n");
 }
 
-void
-NavegarEste (int *x, int *y)
+void NavegarEste (int *x, int *y)
 {
   (*x)++;
   printf ("\nSe ha movido al Este\n");
 }
 
-void
-NavegarNorte (int *x, int *y)
+void NavegarNorte (int *x, int *y)
 {
   (*y)++;
   printf ("\nSe ha movido al Norte\n");
 }
 
-void
-NavegarSur (int *x, int *y)
+void NavegarSur (int *x, int *y)
 {
   (*y)--;
   printf ("\nSe ha movido al Sur\n");
 }
 
-void
-Interfaz (void *func_actual (int *, int *))
+void Interfaz (void *func_actual (int *, int *))
 {
   unsigned char opc = 0;	//Declaro un caracter sin bit de signo.
 
@@ -87,7 +81,7 @@ Interfaz (void *func_actual (int *, int *))
       func_actual = NavegarEste;
       break;
     default:
-      printf
-	("\n\nLa opciC3n elegida no es valida. No se realiza ningun movimiento\n\n");
+      printf("\n\nLa opciC3n elegida no es valida. No se realiza ningun movimiento\n\n");
+      break;
     }
 }
